@@ -1482,7 +1482,7 @@ static void our_sofia_event_callback(nua_event_t event,
 			nua_handle_bind(nh, NULL);
 		}
 		sofia_private->destroy_me = 12;
-		sofia_private_free(sofia_private);
+		//sofia_private_free(sofia_private);
 
 	}
 
@@ -1895,7 +1895,7 @@ void sofia_event_callback(nua_event_t event,
 
 			if (!switch_core_session_running(session) && !switch_core_session_started(session)) {
 				nua_handle_bind(nh, NULL);
-				sofia_private_free(sofia_private);
+				//sofia_private_free(sofia_private);
 				switch_core_session_destroy(&session);
 				nua_respond(nh, 503, "Maximum Calls In Progress", SIPTAG_RETRY_AFTER_STR("300"), TAG_END());
 			}
